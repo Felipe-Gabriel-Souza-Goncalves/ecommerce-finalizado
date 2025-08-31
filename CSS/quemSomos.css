@@ -1,11 +1,6 @@
-aside{
-    display: flex;
-    justify-content: space-around;
+main{
+    padding: 0 calc(var(--paddingPadrao)*6);
 }
-    .opcao{
-        display: flex;
-        justify-content: center;
-    }
 
 #divFundoCadastro{
     margin-top: 50px;
