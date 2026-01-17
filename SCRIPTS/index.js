@@ -13,6 +13,7 @@ function addCategoria(texto, e, category){
     
     const div = document.createElement("div")
     div.classList.add("escolhido")
+    div.classList.add(category === "plataforma" ? "plataforma" : "genero")
     div.setAttribute("onclick", `removeCategoria('${texto}', this)`)
 
     const span = document.createElement("h2")
@@ -52,8 +53,14 @@ function removeCategoria(texto, e){
 }
 
 async function searchCategories(){
-    let chosenCategories = document.querySelectorAll(".escolhido h2")
-    chosenCategories = [...chosenCategories].map(c => {
+    
+    let generosDesejados = document.querySelectorAll(".genero h2")
+    generosDesejados = [...generosDesejados].map(c => {
+        return c.innerText
+    })
+
+    let plataformasDesejadas = document.querySelectorAll(".plataforma h2")
+    plataformasDesejadas = [...plataformasDesejadas].map(c => {
         return c.innerText
     })
 
@@ -62,17 +69,26 @@ async function searchCategories(){
     await fetch("jogos.json").then(response => response.json())
     .then(jogos =>{
         jogos.forEach(jogo =>{
-            jogo.generos.forEach(genero =>{
-                if(chosenCategories.includes(genero) && idMatches.includes(jogo.id) == false){
-                    idMatches.push(jogo.id)
+            let contem = true
+
+            // Itera por cada genero do jogo
+            generosDesejados.forEach(genero =>{
+                if(!jogo.generos.includes(genero)){
+                    console.log(jogo.generos)
+                    contem = false
                 }
             })
 
-            jogo.plataformas.forEach(plataforma =>{
-                if(chosenCategories.includes(plataforma) && idMatches.includes(jogo.id) == false){
-                    idMatches.push(jogo.id)
+            plataformasDesejadas.forEach(plataforma =>{
+                if(!jogo.plataformas.includes(plataforma)){
+                    console.log(jogo.plataformas)
+                    contem = false
                 }
             })
+
+            if(contem) idMatches.push(jogo.id)
+
+
         })
     })
 

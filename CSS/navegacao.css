@@ -1,22 +1,22 @@
-header{
+.header{
     display: flex;
     justify-content: space-between;
     background-color: var(--corNavEscura);
     padding: var(--paddingPadrao);
     box-sizing: border-box;
 }
-header > div{
+.header > div{
     display: flex;
     align-items: center;
 }
-header .iconHeader{
+.header .iconHeader{
     width: 50px;
     margin: var(--paddingPadrao);
 }
-header .iconHeader:hover{
+.header .iconHeader:hover{
     filter: brightness(0) saturate(100%) invert(96%) sepia(39%) saturate(3518%) hue-rotate(180deg) brightness(112%) contrast(107%);
 }
-header a{
+.header a{
     text-decoration: none;
     display: flex;
     padding: 12px;
@@ -26,10 +26,10 @@ header a{
     font-size: 2em;
     gap: 8px;
 }
-header a:hover{
+.header a:hover{
     backdrop-filter: brightness(1.2);
 }
 
-header #logo{
+.header #logo{
     height: 60px;
 }

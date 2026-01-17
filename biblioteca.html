@@ -15,69 +15,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header> 
-        <img class="iconHeader" src="IMG/configuracao.svg"
-        alt="Configurações" onclick="openDiv('div-config')">
+    <!-- Header -->
+    <main-cabecalho class="header"></main-cabecalho >
 
-        <a href="index.html">
-            <img src="IMG/logotipo.png" id="logo" alt="Logo">
-            <span>GamesIndies</span>
-        </a>
+    <!-- Aside -->
+    <navegacao-lateral class="aside"></navegacao-lateral>
 
-        <img class="iconHeader" src="IMG/usuario.svg"
-        alt="Usuário" onclick="openDiv('div-user')">
-    </header>
-
-    <aside>
-        <a href="produtos.html" class="ancora optionAside">
-            <img class="iconOptionAside" src="IMG/produtos.svg" alt="icone produtos">
-            <span>Produtos</span>
-        </a>
-        <a href="quemSomos.html" class="ancora optionAside">
-            <img class="iconOptionAside" src="IMG/quemSomos.svg" alt="icone quem somos">
-            <span>Quem somos</span>
-        </a>
-    </aside>
     
     <main>
         
     </main>
 
 
-    <footer>
-        <div>
-            <h3>Desenvolvido por:</h3>
-            <a target="_blank" style="text-decoration: none;" href="https://github.com/FelipeGSG">
-                <div class="desenvolvedorFooter">
-                    <img class="imgFooter" src="IMG/github-mark-white.png" alt="Github">
-                    <p>Felipe</p>
-                </div>
-            </a>
-        </div>
-        <div>
-            <p>Todos os direitos reservados, 2024</p>
-        </div>
-    </footer>
+    <!-- Footer -->
+    <main-footer class="footer"></main-footer>
 
     <!-- divConfigurações -->
-    <div id="div-config">
-        <h1 
-            onclick="document.getElementById('div-config').style.display = 'none';
-            elementoAberto = 'inicio'">X</h1>
-        <button class="button-config" onclick="mudarContraste()">Alto contraste</button>
-        <button class="button-config" onclick="toggleAnimacao()">Sem animações</button>
-        <button class="button-config" onclick="toggleBlur()">Blur ativado</button>
-    </div>
-
+    <configuracoes-gerais id="div-config"></configuracoes-gerais>
+    
     <!-- divUsuario -->
-    <div id="div-user">
-        <h2 id="displayNomeUsuario">...</h2>
-        <h3 id="displayEmail">...</h3>
-        <button id="buttonLogarSair" onclick="botaoSairLogar()">...</button>
-        <button id="buttonFechar" onclick="openDiv()">Fechar</button>
-    </div>
+    <login-usuario id="div-user"></login-usuario>
+
+    <script src="SCRIPTS/componentes/header.js"></script>
+    <script src="SCRIPTS/componentes/aside.js"></script>
+    <script src="SCRIPTS/componentes/footer.js"></script>
+    <script src="SCRIPTS/componentes/configuracoes.js"></script>
+    <script src="SCRIPTS/componentes/login.js"></script>
 
     <script src="SCRIPTS/geral.js"></script>
     <script src="SCRIPTS/biblioteca.js"></script>
+
 </body>
 </html>

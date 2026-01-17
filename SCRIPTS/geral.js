@@ -68,14 +68,16 @@ document.body.addEventListener("keyup", (event) =>{
 // programação referente ao contraste do site:
 function mudarContraste(){
     if(config.hasHighContrast == true){
-        document.documentElement.style.setProperty('--corNavEscura', "#181828")
-        document.documentElement.style.setProperty('--corSemHover', "#dedeec")
-        document.documentElement.style.setProperty('--corFundo', "#232333")
+        document.body.classList.add("altoContraste")
+        // document.documentElement.style.setProperty('--corNavEscura', "#181828")
+        // document.documentElement.style.setProperty('--corSemHover', "#dedeec")
+        // document.documentElement.style.setProperty('--corFundo', "#232333")
     }
     else{
-        document.documentElement.style.setProperty('--corNavEscura', "#262636")
-        document.documentElement.style.setProperty('--corSemHover', "#b3b3c0")
-        document.documentElement.style.setProperty('--corFundo', "#333346")
+        document.body.classList.remove("altoContraste")
+        // document.documentElement.style.setProperty('--corNavEscura', "#262636")
+        // document.documentElement.style.setProperty('--corSemHover', "#b3b3c0")
+        // document.documentElement.style.setProperty('--corFundo', "#333346")
     }
 } 
 // -------------------------------------------------------

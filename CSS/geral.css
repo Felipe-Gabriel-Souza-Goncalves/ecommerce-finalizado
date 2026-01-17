@@ -9,6 +9,12 @@
     --corSemHover: #b3b3c0;
 }
 
+:root:has(body.altoContraste){
+    --corNavEscura: #181828;
+    --corFundo: #232333;
+    --corSemHover: #dedeec;
+}
+
 *{
     font-family: Montserrat, sans-serif;
     color: var(--corSemHover);
@@ -28,7 +34,7 @@ body{
         "header header"
         "aside main"
         "footer footer";
-    grid-template-columns: 1fr 4fr; /* proporção aside:main */
+    grid-template-columns: 1fr 4fr; /* proporção .aside:main */
     grid-template-rows: auto 1fr auto;
 }
     body::-webkit-scrollbar{
@@ -46,7 +52,7 @@ body{
     }
 
 
-header{
+.header{
     grid-area: header;
     grid-column: 1 / 5;
     width: 100%;
@@ -55,9 +61,9 @@ header{
     box-sizing: border-box;
 }
 
-header img,
-aside img,
-footer img{
+.header img,
+.aside img,
+.footer img{
     user-select: none;
     cursor: pointer;
 }
@@ -105,7 +111,7 @@ main{
     border-bottom: 1px solid rgba(186, 186, 212, 0.459);
     padding: calc(var(--paddingPadrao)*2) calc(var(--paddingPadrao)*4);
 }
-aside{
+.aside{
     grid-area: aside;
     grid-column: 1 / 2;
     background-color: var(--corFundo);
@@ -116,10 +122,10 @@ aside{
     white-space: "ellipse";
     overflow: hidden;
 }
-aside .iconOptionAside{
+.aside .iconOptionAside{
     width: 50px;
 }
-aside .optionAside{
+.aside .optionAside{
     padding: var(--paddingPadrao);
     border-bottom: 1px solid var(--corSemHover);
     overflow: hidden;
@@ -128,18 +134,18 @@ aside .optionAside{
     text-decoration: none;
     font-size: 1em;
 }
-aside .optionAside span{
+.aside .optionAside span{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-aside .optionAside:hover{
+.aside .optionAside:hover{
     backdrop-filter: brightness(1.2);
 }
 
 
-footer{
+.footer{
     grid-area: footer;
     grid-column: 1 / 5;
     background-color:var(--corFundo);
@@ -151,7 +157,7 @@ footer{
     box-sizing: border-box;
 }
 
-footer div h3+a{
+.footer div h3+a{
     text-decoration: none;
 }
 
@@ -273,7 +279,7 @@ body{
         min-width: 100%;
     }
 
-    aside{
+    .aside{
         flex-wrap: wrap;
         overflow: auto;
     }
