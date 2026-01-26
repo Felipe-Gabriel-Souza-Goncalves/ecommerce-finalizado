@@ -74,14 +74,12 @@ async function searchCategories(){
             // Itera por cada genero do jogo
             generosDesejados.forEach(genero =>{
                 if(!jogo.generos.includes(genero)){
-                    console.log(jogo.generos)
                     contem = false
                 }
             })
 
             plataformasDesejadas.forEach(plataforma =>{
                 if(!jogo.plataformas.includes(plataforma)){
-                    console.log(jogo.plataformas)
                     contem = false
                 }
             })

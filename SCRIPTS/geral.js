@@ -69,15 +69,9 @@ document.body.addEventListener("keyup", (event) =>{
 function mudarContraste(){
     if(config.hasHighContrast == true){
         document.body.classList.add("altoContraste")
-        // document.documentElement.style.setProperty('--corNavEscura', "#181828")
-        // document.documentElement.style.setProperty('--corSemHover', "#dedeec")
-        // document.documentElement.style.setProperty('--corFundo', "#232333")
     }
     else{
         document.body.classList.remove("altoContraste")
-        // document.documentElement.style.setProperty('--corNavEscura', "#262636")
-        // document.documentElement.style.setProperty('--corSemHover', "#b3b3c0")
-        // document.documentElement.style.setProperty('--corFundo', "#333346")
     }
 } 
 // -------------------------------------------------------
@@ -137,6 +131,13 @@ function botaoSairLogar(){
     } else{
         window.location.href = "quemSomos.html"
     }
+}
+
+function formatarPreco(preco){
+    preco = parseFloat(preco).toFixed(2)
+    preco = preco.toString().replace(".", ",")
+
+    return "R$" + preco
 }
 
 displayUsuario()

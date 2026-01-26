@@ -2,8 +2,8 @@ class Footer extends HTMLElement{
   connectedCallback(){
     this.innerHTML = `
         <div>
-            <h3>Desenvolvido por:</h3>
-            <a target="_blank" href="https://github.com/FelipeGSG">
+            <h5>Desenvolvido por:</h5>
+            <a target="_blank" href="https://github.com/Felipe-Gabriel-Souza-Goncalves">
                 <div class="desenvolvedorFooter">
                     <img class="imgFooter" src="IMG/github-mark-white.png" alt="Github">
                     <p>Felipe</p>

@@ -1,21 +1,26 @@
 # 🎮 Simulação de E-commerce de jogos indies
 ## 📘 Github educacional: [FelipeGSG](https://github.com/FelipeGSG)
-
-## 🌐 Link do site: https://felipegsg.github.io/ecommerce-finalizado/
+## 🌐 Link do site 
+https://felipe-gabriel-souza-goncalves.github.io/ecommerce-finalizado/
 
 ## ✏️ Descrição:
-Projeto feito no [SENAI Nami Jafet](https://sp.senai.br/unidade/mogidascruzes/)
+Projeto **inicialmente** feito como projeto disciplinar no SENAI [SENAI Nami Jafet](https://sp.senai.br/unidade/mogidascruzes/)
+<br>
 Simula um e-commerce de jogos indies entre 3 páginas:
-  - Inicial
-    - Pequena animação & botões de categoria
+  - Inicial (index.html)
+    - Banner do site
+    - Contagem de jogos por categoria:
+      - Gênero
+      - Plataforma
   - Produtos
-    - Uso de lista de desejos e foco nos produtos
+    - Lista de desejos
+    - Simulação de compra de jogos
   - Quem somos?
-    - Na página ```Quem somos?``` utiliza-se um cadastro com informações no localStorage, 
+    - Descrição da loja fictícia
+    - "Cadastro" com informações no localStorage, 
     **as informações __não__ serão armazenadas em qualquer banco de dados**
 
 **As informações dos jogos não estão comprometidas com a realidade, somente para simular um e-commerce**
-
 
 ## ⚙️ Funcionalidades:
 - Configurações

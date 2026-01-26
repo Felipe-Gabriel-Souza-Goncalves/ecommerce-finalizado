@@ -9,7 +9,7 @@ function salvarDesejos(id){
     } else{
         if(listaDeDesejos.includes(id) == true){
             listaDeDesejos[id-1] = 0
-            console.log("ZA HANDO GA KESU")
+            // console.log("ZA HANDO GA KESU")
             document.getElementById(`id${id}`).remove()
         }
     }

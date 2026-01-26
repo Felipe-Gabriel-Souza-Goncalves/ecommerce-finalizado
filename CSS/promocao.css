@@ -1,0 +1,42 @@
+#promocao{
+  background-color: var(--corFundo);
+  border: 2px solid var(--corNavEscura);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  margin: 4px;
+}
+
+#promocao p{
+  margin: 0;
+}
+
+#promocao img{
+  width: 120px;
+  aspect-ratio: 10 / 14;
+  object-position: center;
+  object-fit: cover;
+}
+
+#promocao:hover #fecharPromocao{
+  opacity: 1;
+}
+
+#fecharPromocao{
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  margin: 4px;
+  opacity: 0;
+  background-color: var(--corNavEscura);
+  width: 24px;
+  text-align: center;
+  font-size: 1.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+}

@@ -157,13 +157,16 @@ main{
     box-sizing: border-box;
 }
 
-.footer div h3+a{
+.footer h5{
+    margin: 0;
+}
+.footer div h5+a{
     text-decoration: none;
 }
 
 .desenvolvedorFooter{
     display: flex;
-    font-size: 2rem;
+    font-size: 1rem;
     align-items: center;
     gap: 1rem;
     transition: 1s;
@@ -176,8 +179,8 @@ main{
     color: aliceblue;
 }
 .imgFooter{
-    width: 50px;
-    height: 50px;
+    aspect-ratio: 1 / 1;
+    width: 24px;
 }
 
 
