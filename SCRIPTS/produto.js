@@ -5,6 +5,8 @@ listaDeDesejos.fill(0)
 var idJogoJson;
 
 function buscar(id){
+
+apagarPopupPromocao()
 // Função que carrega o JSON para consumir a API e processa os dados JSON
 fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
         corpo.forEach(jogo => {
@@ -22,6 +24,15 @@ fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
                     document.getElementById("dataLancamentoJogo").innerHTML = jogo.data_lancamento
                     document.getElementById("avaliacaoJogo").innerHTML = jogo.avaliacao 
                     document.getElementById("precoJogo").innerHTML = jogo.preco
+
+                    if(jogo.id == gameIndex+1){
+                        const desconto = parseInt(promocao.getAttribute("desconto"))
+                        const precoFinal = jogo.preco * (1 - (desconto/100))
+
+                        document.getElementById("precoJogo").innerHTML = 
+                        "<strike>R$"+jogo.preco+"</strike>&nbsp;" + formatarPreco(precoFinal)
+                    }
+        
 
                     document.getElementById("comprarJogo").disabled = false
                 } else{
@@ -122,8 +133,8 @@ async function carregarJogos(criterio){
             if(criterio != "lancamento"){
         
                 const info = document.createElement("h4")
-                info.textContent = "R$"+jogo.preco + "   "
-    
+                info.textContent = "R$"+ jogo.preco + "   "
+
                 const span = document.createElement("span")
                 span.innerHTML = "&nbsp; &nbsp; &nbsp;" + jogo.avaliacao + " - "
                 const numStars = Math.round(parseFloat(jogo.avaliacao))

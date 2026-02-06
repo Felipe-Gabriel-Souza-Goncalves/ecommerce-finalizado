@@ -1,4 +1,10 @@
-# ATUALIZAÇÕES DO PROJETO - Versão [1.2.3]
+# ATUALIZAÇÕES DO PROJETO - Versão [1.3]
+
+## [1.3] - 06/02/2026:
+- Evento de promoção
+  - Ocorre a cada 90 segundos
+  - Gera um desconto de 15%-85%
+  - Altera a tela de compra do jogo
 
 ## [1.2.3] - 25/01/2026:
 - Progressos e testes em novo evento/componente promoção

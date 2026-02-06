@@ -28,3 +28,38 @@ class Promocao extends HTMLElement{
 }
 
 customElements.define("evento-promocao", Promocao)
+const promocao = document.getElementById("promocao");
+
+let gameIndex = undefined;
+
+function gerarPromocao(){
+    carregarJogos().then(dados =>{
+        jogosInfo = dados;
+
+        gameIndex = Math.floor(Math.random()*(jogosInfo.length - 1))
+        const rawDesconto = Math.floor(Math.random()*15)*5+10
+    
+        do{
+          gameIndex++;
+          gameIndex = gameIndex % jogosInfo.length;
+        } while(jogosInfo[gameIndex].data_lancamento == null)
+    
+        carregarPromocao(gameIndex, rawDesconto)
+        setTimeout(apagarPopupPromocao, 7500)
+    })
+}
+
+function carregarPromocao(gameIndex, rawDesconto){
+
+    promocao.setAttribute("desconto", rawDesconto)
+    promocao.data = jogosInfo[gameIndex];
+    promocao.style.display = "flex"
+    promocao.setAttribute("onclick", `buscar(${jogosInfo[gameIndex].id})`)
+}
+
+function apagarPopupPromocao(){
+    promocao.style.display = "none"
+    promocao.data = ""
+}
+
+setInterval(gerarPromocao, 90 * 1000) // 90seg

@@ -22,29 +22,4 @@ function carregarLoja() {
 
 carregarLoja();
 
-fetch("jogos.json")
-  .then((response) => response.json())
-  .then((dados) => {
-    const promocao = document.getElementById("promocao");
-    let index = 15;
 
-    index++;
-    index = index % dados.length;
-    const rawDesconto = Math.floor(Math.random()*15)*5+10
-
-
-    promocao.setAttribute("desconto", rawDesconto)
-    promocao.data = dados[index];
-
-    setInterval(() => {
-      do{
-        index++;
-        index = index % dados.length;
-      } while(dados[index].data_lancamento == null)
-
-      const rawDesconto = Math.floor(Math.random()*15)*5+10
-
-      promocao.setAttribute("desconto", rawDesconto)
-      promocao.data = dados[index];
-    }, 5000);
-});

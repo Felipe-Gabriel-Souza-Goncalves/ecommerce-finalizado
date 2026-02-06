@@ -140,4 +140,23 @@ function formatarPreco(preco){
     return "R$" + preco
 }
 
+async function carregarJogos() {
+  try {
+    const response = await fetch("jogos.json")
+
+    if (!response.ok) {
+      throw new Error("Erro ao carregar jogos")
+    }
+
+    return await response.json()
+  } catch (erro) {
+    alert(erro.message)
+  }
+}
+
 displayUsuario()
+
+let jogosInfo = undefined;
+carregarJogos().then(dados =>{
+    jogosInfo = dados;
+})

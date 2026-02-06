@@ -91,6 +91,7 @@ async function searchCategories(){
     })
 
     loadGamesWithCategory(idMatches)
+
 }
 
 function loadGamesWithCategory(array){
