@@ -15,9 +15,10 @@ Simula um e-commerce de jogos indies entre 3 páginas:
   - Produtos
     - Lista de desejos
     - Simulação de compra de jogos
+    - Eventos periódicos de promoções
   - Quem somos?
     - Descrição da loja fictícia
-    - "Cadastro" com informações no localStorage, 
+    - "Cadastro" com informações armazenadas em localStorage, 
     **as informações __não__ serão armazenadas em qualquer banco de dados**
 
 **As informações dos jogos não estão comprometidas com a realidade, somente para simular um e-commerce**
@@ -25,10 +26,11 @@ Simula um e-commerce de jogos indies entre 3 páginas:
 ## ⚙️ Funcionalidades:
 - Configurações
 - Usuário/Login
-- Lista de desejo
+- Lista de desejos
 - Mostrar informações do produto (jogo)
 - Navegação interna e externa
-- Adicionar categorias
+- Filtrar quantidade de jogos por categoria (plataforma/gênero)
+- Promoções temporárias
 
 ## 📁 Outros arquivos:
 [Atualizações do projeto](CHANGELOG.md)

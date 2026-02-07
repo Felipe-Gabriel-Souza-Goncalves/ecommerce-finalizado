@@ -2,10 +2,6 @@ const divConfig = document.getElementById("div-config")
 const divUser = document.getElementById("div-user")
 const divListaDesejos = document.getElementById("listaDeDesejos")
 
-const elNome = document.getElementById("displayNomeUsuario")
-const elEmail= document.getElementById("displayEmail")
-const elButton = document.getElementById("buttonLogarSair")
-
 let algoAberto = false
 
 const config = {
@@ -94,7 +90,6 @@ function mudarBlur(){
         } catch (TypeError) {
         }
     }
-    localStorage.setItem("blurAtivado", config.hasBlur)
 }
 
 //---------------------------------------------
@@ -107,15 +102,10 @@ function mudarAnimacao(){
 }
 //---------------------------------------------
 function displayUsuario(){
-    (config.loggedIn && config.name != undefined) ? elNome.innerText = config.name : elNome.innerText = "Usuário";
-    (config.loggedIn && config.email != undefined) ? elEmail.innerText = config.email : elEmail.innerText = "Email não definido";
-    config.loggedIn ? elButton.innerText = "Sair" : elButton.innerText = "Logar"
-
 
     if(!document.getElementById("bemVindoUsuario")) {
         return
     }
-    
     if((config.loggedIn && config.name != undefined)){
         document.getElementById("bemVindoUsuario").innerText = config.name 
     } else{
@@ -153,8 +143,6 @@ async function carregarJogos() {
     alert(erro.message)
   }
 }
-
-displayUsuario()
 
 let jogosInfo = undefined;
 carregarJogos().then(dados =>{

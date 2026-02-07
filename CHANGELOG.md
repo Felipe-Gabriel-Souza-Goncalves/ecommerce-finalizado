@@ -1,4 +1,18 @@
-# ATUALIZAÇÕES DO PROJETO - Versão [1.3]
+# ATUALIZAÇÕES DO PROJETO - Versão [1.3.1]
+
+## [1.3.1] - 06/02/2026:
+- Correção de informações do usuário logado não aparecer
+- Simplificação do código:
+  - Lista de desejos (salvar, apagar, gerar itens)
+  - Produtos (gerar jogos na loja)
+  - Componente promocao/login
+- Informação de estúdio ao clicar no jogo
+- Arrumado problema de jogos da lista de desejos não salvar corretamente
+- Exclusão de localStorage desnecessário ao alterar configuração de blur
+- Jogos não lançados da lista de desejos não tem mais preço "null" ou "--,--"
+- Alterações de design nos carrosseis de produtos
+- Novas "const" tipo HTMLElement para evitar busca desnecessária de DOM
+- Redução de document.createElement() para concatenação de innerHTML (**O motivo da troca foi por legibilidade, já que os dados utilizados não podem ser alterados pelo usuário**)
 
 ## [1.3] - 06/02/2026:
 - Evento de promoção

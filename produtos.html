@@ -25,7 +25,6 @@
     <navegacao-lateral class="aside"></navegacao-lateral>
 
     <main>
-        <br><br>
         <div class="geral">
 
             <h1>Mais jogados</h1>
@@ -77,10 +76,11 @@
                 <div>
                     <div>
                         <h1 id="nomeJogo">NOME DO JOGO</h1>
+                        <p id="estudioJogo" style="margin: 0;">ESTÚDIO DO JOGO</p>
                         <span id="dataLancamentoJogo">DATA DE LANÇAMENTO &nbsp;&nbsp; &nbsp;  </span>
                         <span id="avaliacaoJogo">AVALIAÇÃO</span> 
-                        <br><br>
-                        <h3>R$ <span id="precoJogo"></span></h3>
+                        <br>
+                        <h3><span id="precoJogo"></span></h3>
                         <br>
                         <div>
                             <input type="checkbox" name="listaDeDesejos" id="adicionarDesejo">
@@ -106,8 +106,11 @@
         </table>
     </div>
 
-    <link rel="stylesheet" href="CSS/promocao.css">
     <evento-promocao id="promocao" data="" desconto="100"></evento-promocao>
+
+
+    <script defer src="SCRIPTS/geral.js"></script>
+    <script defer src="SCRIPTS/componentes/promocao.js"></script>
 
     <script src="SCRIPTS/componentes/header.js"></script>
     <script src="SCRIPTS/componentes/aside.js"></script>
@@ -115,8 +118,7 @@
     <script src="SCRIPTS/componentes/configuracoes.js"></script>
     <script src="SCRIPTS/componentes/login.js"></script>
 
-    <script defer src="SCRIPTS/geral.js"></script>
-    <script defer src="SCRIPTS/componentes/promocao.js"></script>
+
 
     <script src="SCRIPTS/produto.js"></script>
     <script src="SCRIPTS/listaDeDesejos.js"></script>

@@ -1,89 +1,62 @@
-const table = document.getElementById("tabelaListaDesejos")
+const listaDesejos = {};
+const table = document.getElementById("tabelaListaDesejos");
+const btnListaDesejo = document.getElementById("adicionarDesejo");
 
-function salvarDesejos(id){
-    if(document.getElementById("adicionarDesejo").checked == true){
-        if(listaDeDesejos.includes(id) == false){
-            listaDeDesejos[id-1] = id
-            criarElementoLista(id)
-        }
-    } else{
-        if(listaDeDesejos.includes(id) == true){
-            listaDeDesejos[id-1] = 0
-            // console.log("ZA HANDO GA KESU")
-            document.getElementById(`id${id}`).remove()
-        }
-    }
-    document.getElementById("adicionarDesejo").checked = false
-    salvarDesejoLocalStorage()
+function salvarDesejos(id) {
+  if (listaDesejos["jogo" + id] != undefined) {
+    return;
+  } else {
+    listaDesejos["jogo" + id] = id;
+  }
 
+  criarElementoLista(id);
+  salvarDesejoLocalStorage();
 }
 
-function criarElementoLista(id){
-    const tr = document.createElement("tr")
-    tr.setAttribute("id", `id${id}`)
-    const td = document.createElement("td")
-    td.style.display = "flex"
+function criarElementoLista(id) {
 
-    const img = document.createElement("img")
-    const div = document.createElement("div")
-    const subDiv = document.createElement("div")
-    const h2 = document.createElement("h2")
-    const h4 = document.createElement("h4")
-    const button = document.createElement("button")
-    button.innerHTML = "Excluir"
-    button.classList.add("buttonExcluirDesejo")
+  const jogo = jogosInfo[id - 1];
 
-    button.onclick = function deletarParentNode(){
-        tr.remove()
-        listaDeDesejos[id-1] = 0
-        salvarDesejos(id)
-    }
-        fetch('jogos.json').then(resposta => resposta.json()).then(corpo =>{
-            corpo.forEach(jogo => {
-                    if(jogo.id == listaDeDesejos[id-1]){
-                        img.src = jogo.imagem
-                        h2.innerHTML = jogo.nome
-
-                        if(jogo.data_lancamento != null){
-                            h4.innerHTML = "R$"+jogo.preco
-                        } else{
-                            h4.innerHTML = " "
-                        }
-
-                        td.appendChild(img)
-                        td.appendChild(div)
-                        
-                        subDiv.appendChild(h2)
-                        subDiv.appendChild(h4)
-
-                        div.appendChild(subDiv)
-                        div.appendChild(button)
-
-                        tr.appendChild(td)
-                        table.appendChild(tr)
-                    }
-            })
-        })
+  if (jogo.id == listaDesejos["jogo"+id]) {
+    table.innerHTML += `
+            <tr id="id${jogo.id}">
+                <td style="display: flex;">
+                    <img src="${jogo.imagem}">
+                    <div>
+                        <div>
+                            <h2>${jogo.nome}</h2>
+                            <h4>${jogo.preco ? formatarPreco(jogo.preco) : "Jogo ainda não foi disponibilizado"}</h4>
+                        </div>
+                        <button 
+                          class="buttonExcluirDesejo"
+                          onclick="apagarItem(${jogo.id}, 'id${jogo.id}')"  
+                        >Excluir</button>
+                    </div>
+                </td>
+            </tr>
+                            
+        `;
+  }
 }
 
-function salvarDesejoLocalStorage(){
-    var arraySomenteDesejos = listaDeDesejos.filter((e) => e > 0)
-    localStorage.setItem("desejos", arraySomenteDesejos)
+function apagarItem(id, trId) {
+  document.getElementById(trId).remove();
+  delete listaDesejos["jogo"+id]
+  salvarDesejoLocalStorage()
 }
 
-function carregarLocalStorage(){
-    var desejos = localStorage.getItem("desejos").split(",")
-
-    for(let i = 0; i<desejos.length; i++){
-        listaDeDesejos[desejos[i]-1] = parseInt(desejos[i])
-    }
-    salvarDesejos()
-
-    for(let i= 0; i< listaDeDesejos.length; i++){
-        if(listaDeDesejos[i] !== 0){
-            criarElementoLista(listaDeDesejos[i])
-        }
-    }
+function salvarDesejoLocalStorage() {
+  const stringDesejos = JSON.stringify(listaDesejos)
+  localStorage.setItem("desejos", stringDesejos);
 }
 
-// carregarLocalStorage()
+function carregarLocalStorage() {
+  const stringDesejosSalvos = localStorage.getItem("desejos") 
+  const objDesejosSalvos = JSON.parse(stringDesejosSalvos)
+
+  for(let key in objDesejosSalvos){
+    salvarDesejos(objDesejosSalvos[key])
+  }
+}
+
+setTimeout(carregarLocalStorage, 200)

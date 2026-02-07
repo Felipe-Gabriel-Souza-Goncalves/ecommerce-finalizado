@@ -1,292 +1,244 @@
-.aside{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-    .opcao{
-        display: flex;
-        justify-content: center;
-    }
-
-div[class^="container"]{
-    display: flex;
-    gap: 2.5rem;
-    overflow-x: scroll;
-    background-color: var(--corNavEscura);
-    padding: 2.5rem;
-    margin-bottom: 50px;
-    scrollbar-color:  rgb(70, 70, 105) rgb(26, 26, 54);
-    
+.opcao {
+  display: flex;
+  justify-content: center;
 }
 
-
-        .informacaoTexto{
-            background-color: #2d2d57d2;
-            margin-top: 90%;
-            padding: 20px 0px;
-            text-align: center;
-            min-width: 100%;
-            transition: 0.4s;
-        }
-            .informacaoTexto * {
-                color: aliceblue;
-            }
-            .informacaoTexto img{
-                filter: brightness(1.8);
-            }
-        .produto{
-            background-color: rgb(0, 0, 0);
-            min-height: 350px;
-            aspect-ratio: 4 / 5;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            cursor: pointer;
-            transition: 0.4s;
-        }
-            .produto:hover .informacaoTexto{
-                opacity: 0;
-            }
-            .produto:hover{
-                scale: 1.1;
-            }
-        .produto img{
-            object-fit: fill;
-        }
-        .produto-parte1:nth-child(1){
-            background-image: url(../IMG/jogos/stardew_valley.png);
-        }
-        .produto-parte1:nth-child(2){
-            background-image: url(../IMG/jogos/pvz.png);
-
-        }
-        .produto-parte1:nth-child(3){
-            background-image: url(../IMG/jogos/the_binding_of_isaac.png);
-
-        }
-        .produto-parte1:nth-child(4){
-            background-image: url(../IMG/jogos/undertale.png);
-
-        }
-        .produto-parte1:nth-child(5){
-            background-image: url(../IMG/jogos/cuphead.png);
-
-        }
-
-        /* container 2 */
-        .produto-parte2:nth-child(1){
-            background-image: url(../IMG/jogos/sea_of_stars.png);
-        }
-        .produto-parte2:nth-child(2){
-            background-image: url(../IMG/jogos/stray.png);
-        }
-        .produto-parte2:nth-child(3){
-            background-image: url(../IMG/jogos/inscryption.png);
-        }
-        .produto-parte2:nth-child(4){ 
-            background-image: url(../IMG/jogos/dead_cells.png);
-        }
-        .produto-parte2:nth-child(5){
-            background-image: url(../IMG/jogos/celeste.png);
-        }
-        
-
-#backgroundPopUpProduto{
-    display: flex;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.479);
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    height: 100%;
-    width: 100%;
+div[class^="container"] {
+  display: flex;
+  gap: 2.5rem;
+  overflow-x: scroll;
+  background-color: var(--corNavEscura);
+  padding: 2rem;
+  margin-bottom: 36px;
+  scrollbar-color: rgb(70, 70, 105) rgb(26, 26, 54);
 }
 
-    #popUpProduto{
-        height: 460px;
-        padding: 2rem;
-        border-radius: 5%;
-        background-color: #262636dc;
-        backdrop-filter: blur(5px);
-        display: flex;
-        flex-direction: column;
-    }
-        #popUpProduto *{
-            color: aliceblue;
-        }
-        #popUpProduto img{
-            height: 470px;
-            border-radius: 10px;
-        }
-    #container-jogo{
-        display: flex;
-        gap: 5%;
-    }
-    #fechar{
-        display: inline-block;
-        padding: 0px;
-        margin-left: auto;
-        text-align: end;
-        cursor: pointer;
-        position: absolute;
-        right: 35px;
-        top: -8px;
-    }
-    div#container-jogo > div {
-        height: 470px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-        #boxImgJogo{
-            background-color: rgb(0, 0, 0);
-            min-width: 340px;
-            aspect-ratio: 4 / 5;
-            background-size: cover !important;
-            background-repeat: no-repeat !important;
-            background-position: center !important;
-            /* cursor: pointer; */
-            transition: 0.4s;
-        }
-        /* div:has(#adicionarDesejo){
-            align-content: center;
-            text-align: left;
-        }
-        #adicionarDesejo{
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            background-color: var(--corNavEscura);
-            border: 2px solid var(--corFundo);
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        #adicionarDesejo:checked{
-            background-color: lightblue;
-        } */
-        #comprarJogo{
-            background-color: var(--corNavEscura);
-            filter: brightness(1.3);
-            padding: 10px 5px;
-            border: 0;
-            border-radius: 5px;
-            width: 100%;
-            font-size: 24px;
-            transition: 0.4s;
-            text-align: center;
-            box-sizing: border-box;
-        }
-            #comprarJogo:hover{
-                filter: drop-shadow(0px 0px 1px white);
-            }
-
-#listaDeDesejos{
-    background-color: var(--corFundoOpacity);
-    backdrop-filter: blur(15px);
-    position: fixed;
-    display: none;
-    flex-direction: column;
-    z-index: 5;
-    height: 100vh;
-    width: 50%;
-    top: 0;
-    left: 0;
-    overflow: auto;
+.informacaoTexto {
+  position: absolute;
+  margin-top: 70%;
+  padding: 8px 24px;
+  bottom: 0;
+  width: 100%;
+  height: 96px;
+  text-align: center;
+  align-content: center;
+  box-sizing: border-box;
+  background-color: #2d2d57d2;
+  backdrop-filter: blur(3px) brightness(0.8);
+  transition: 0.4s;
 }
-#listaDeDesejos table h1{
-    text-align: center;
-    width: 100%;
-    padding-right: 100px;
+.informacaoTexto * {color: aliceblue;}
+.informacaoTexto h2{margin: 0; font-size: 1.3em;}
+.informacaoTexto h4{margin: 0; margin-top: 0.5em; font-size: 1em;}
+.informacaoTexto img {filter: brightness(1.8);}
+
+.produto {
+  background-color: rgb(0, 0, 0);
+  min-height: 350px;
+  aspect-ratio: 4 / 5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
 }
-#listaDeDesejos::-webkit-scrollbar{
-    background-color: rgb(26, 26, 54);;
-    }
-    #listaDeDesejos::-webkit-scrollbar-thumb{
-        background-color: rgb(70, 70, 105);
-        border: 3px solid rgb(26, 26, 54);
-        border-radius: 5px;
-        transition: 0.4s;
-    }
-    #listaDeDesejos::-webkit-scrollbar-thumb:active{
-        background-color: rgb(55, 55, 85);
-
-    }
-    #tabelaListaDesejos{
-        width: 70%;
-        height: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    td{
-        padding: 25px 0px;
-    }
-    td img{
-        width: 200px;
-        height: 250px;   
-    }
-    th,td{
-        max-height: 400px;
-        border-top: 2px solid var(--corSemHover);
-        border-bottom: 2px solid var(--corSemHover);
-    }
-        td div{
-            display: flex;
-            flex-direction: column;
-            padding: 0px 20px;
-            justify-content: space-between;
-        }
-        td div h2{
-            margin: 0;
-        }
-
-.buttonExcluirDesejo{
-    background-color: var(--corFundo);
-    color: var(--corSemHover);
-    width: 200px;
-    padding: 10px 5px;
-    margin-top: 20px;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    transition: 0.3s;
+.produto:hover .informacaoTexto {
+  opacity: 0;
+}
+.produto:hover {
+  scale: 1.1;
+}
+.produto img {
+  object-fit: fill;
 }
 
-    .buttonExcluirDesejo:hover{
-        filter: brightness(1.3);
-    }
+#backgroundPopUpProduto {
+  display: flex;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.479);
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+#popUpProduto {
+  height: 460px;
+  padding: 2rem;
+  border-radius: 5%;
+  background-color: #262636dc;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+}
+#popUpProduto * {
+  color: aliceblue;
+}
+#popUpProduto img {
+  height: 470px;
+  border-radius: 10px;
+}
+#container-jogo {
+  display: flex;
+  gap: 5%;
+}
+#fechar {
+  display: inline-block;
+  padding: 0px;
+  margin-left: auto;
+  text-align: end;
+  cursor: pointer;
+  position: absolute;
+  right: 35px;
+  top: -8px;
+}
+div#container-jogo > div {
+  height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#boxImgJogo {
+  background-color: rgb(0, 0, 0);
+  min-width: 340px;
+  aspect-ratio: 4 / 5;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  transition: 0.4s;
+}
+#comprarJogo {
+  background-color: var(--corNavEscura);
+  filter: brightness(1.3);
+  padding: 10px 5px;
+  border: 0;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 24px;
+  transition: 0.4s;
+  text-align: center;
+  box-sizing: border-box;
+}
+#comprarJogo:hover {
+  filter: drop-shadow(0px 0px 1px white);
+}
+
+#listaDeDesejos {
+  background-color: var(--corFundoOpacity);
+  backdrop-filter: blur(15px);
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  z-index: 5;
+  height: 100vh;
+  width: 50%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+#listaDeDesejos table h1 {
+  text-align: center;
+  width: 100%;
+  padding-right: 100px;
+}
+#listaDeDesejos::-webkit-scrollbar {
+  background-color: rgb(26, 26, 54);
+}
+#listaDeDesejos::-webkit-scrollbar-thumb {
+  background-color: rgb(70, 70, 105);
+  border: 3px solid rgb(26, 26, 54);
+  border-radius: 5px;
+  transition: 0.4s;
+}
+#listaDeDesejos::-webkit-scrollbar-thumb:active {
+  background-color: rgb(55, 55, 85);
+}
+#tabelaListaDesejos {
+  width: 70%;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+td {
+  padding: 25px 0px;
+}
+td img {
+  width: 200px;
+  height: 250px;
+}
+th,
+td {
+  max-height: 400px;
+  border-top: 2px solid var(--corSemHover);
+  border-bottom: 2px solid var(--corSemHover);
+}
+td div {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  justify-content: space-between;
+}
+td div h2 {
+  margin: 0;
+}
+
+.buttonExcluirDesejo {
+  background-color: var(--corFundo);
+  color: var(--corSemHover);
+  width: 200px;
+  padding: 10px 5px;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.buttonExcluirDesejo:hover {
+  filter: brightness(1.3);
+}
 @media (width < 50rem) {
-    .header{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left;
-        overflow: auto;
-        gap: 1.5rem;
-    }
-        .usuario, .logo, .configuracao{
-            padding: 0;
-        }
-        .usuario{
-            margin-left: none;
-        }
-    #boxImgJogo{
-        height: 450px !important;
-    }
-    #popUpProduto{
-        align-items: center;
-        overflow: scroll;
-    }
-    #popUpProduto img{
-        width: 350px;
-    }
-    #container-jogo{
-        flex-direction: column;
-    }
-    #comprarJogo{
-        margin-top: 5%;
-    }
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow: auto;
+    gap: 1.5rem;
+  }
+  .usuario,
+  .logo,
+  .configuracao {
+    padding: 0;
+  }
+  .usuario {
+    margin-left: none;
+  }
+  #boxImgJogo {
+    height: 450px !important;
+  }
+  #popUpProduto {
+    align-items: center;
+    overflow: scroll;
+  }
+  #popUpProduto img {
+    width: 350px;
+  }
+  #container-jogo {
+    flex-direction: column;
+  }
+  #comprarJogo {
+    margin-top: 5%;
+  }
 
-    #listaDeDesejos{
-        width: 100vw;
-        min-width: 100vw;
-    }
+  #listaDeDesejos {
+    width: 100vw;
+    min-width: 100vw;
+  }
 }

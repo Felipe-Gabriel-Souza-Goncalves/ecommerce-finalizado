@@ -8,6 +8,10 @@ class Promocao extends HTMLElement{
       const precoFinal = (jogo.preco * (1 - desconto/100)).toFixed(2)
 
       this.innerHTML = `
+        <!-- SOMENTE UTILIZADO POR SER COMPONENTE ÚNICO -->
+        <link rel="stylesheet" href="CSS/promocao.css">
+        
+      
         <img src="${jogo.imagem}" alt="${jogo.nome}">
         <div>
             <p>
@@ -33,6 +37,7 @@ const promocao = document.getElementById("promocao");
 let gameIndex = undefined;
 
 function gerarPromocao(){
+  let jogosInfo;
     carregarJogos().then(dados =>{
         jogosInfo = dados;
 
