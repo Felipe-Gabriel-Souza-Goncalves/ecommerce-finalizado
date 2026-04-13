@@ -11,7 +11,7 @@ class Aside extends HTMLElement {
         </a>
     `;
 
-    if (window.location.pathname == "/produtos.html") {
+    if (window.location.pathname.includes("/produtos.html")) {
       this.innerHTML += `
         <a class="ancora optionAside" onclick="openDiv('listaDeDesejos')">
             <img class="iconOptionAside" src="IMG/listaDesejos.svg" alt="icone lista de desejos">

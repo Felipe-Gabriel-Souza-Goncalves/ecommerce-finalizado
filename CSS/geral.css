@@ -53,6 +53,16 @@ br, hr, img{
     user-select: none;
 }
 
+.iconeFechar{
+  cursor: pointer;
+  width: 36px;
+}
+
+configuracoes-gerais > .iconeFechar{
+  align-self: self-end;
+  padding: 8px;
+}
+
 .header {
   grid-area: header;
   grid-column: 1 / 5;

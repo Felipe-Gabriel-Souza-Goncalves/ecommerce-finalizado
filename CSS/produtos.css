@@ -82,15 +82,12 @@ div[class^="container"] {
 #popUpProduto * {
   color: aliceblue;
 }
-#popUpProduto img {
+#popUpProduto img:not(img[src="/IMG/fechar.svg"]) {
   height: 470px;
   border-radius: 10px;
 }
-#container-jogo {
-  display: flex;
-  gap: 5%;
-}
-#fechar {
+
+#fechar{
   display: inline-block;
   padding: 0px;
   margin-left: auto;
@@ -98,7 +95,12 @@ div[class^="container"] {
   cursor: pointer;
   position: absolute;
   right: 35px;
-  top: -8px;
+  width: 36px;
+}
+
+#container-jogo {
+  display: flex;
+  gap: 5%;
 }
 div#container-jogo > div {
   height: 470px;
@@ -227,7 +229,7 @@ td div h2 {
     align-items: center;
     overflow: scroll;
   }
-  #popUpProduto img {
+  #popUpProduto img:not(img[src="/IMG/fechar.svg"]) {
     width: 350px;
   }
   #container-jogo {

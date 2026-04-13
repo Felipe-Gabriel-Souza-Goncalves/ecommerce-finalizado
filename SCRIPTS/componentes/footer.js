@@ -11,6 +11,9 @@ class Footer extends HTMLElement{
             </a>
         </div>
         <div>
+            <a target="_blank" href="https://github.com/Felipe-Gabriel-Souza-Goncalves/ecommerce-finalizado">Retornar ao repositório</a>
+        </div>
+        <div>
             <p>Todos os direitos reservados, 2026</p>
         </div>
     `

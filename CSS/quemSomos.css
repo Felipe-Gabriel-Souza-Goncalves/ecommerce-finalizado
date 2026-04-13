@@ -3,9 +3,7 @@ main{
 }
 
 #divFundoCadastro{
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px auto;
     width: 70%;
     max-width: 550px;
     padding: 10px 0px;
@@ -17,9 +15,11 @@ main{
     border-radius: 10px;
     font-size: 1.4em;
 }
-    #divFundoCadastro input{
+    .inputs-cadastro{
+        font-size: 1em;
         width: 70%;
-        padding: 8px 6px;
+        padding: 10px 6px;
+        margin-bottom: 16px;
         border: 1px solid gray;
         border-radius: 8px;
         background-color: var(--corFundo);

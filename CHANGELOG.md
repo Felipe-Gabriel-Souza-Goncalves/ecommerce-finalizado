@@ -1,4 +1,10 @@
-# ATUALIZAÇÕES DO PROJETO - Versão [1.3.1]
+# ATUALIZAÇÕES DO PROJETO - Versão [1.3.2]
+
+## [1.3.2] - 13/04/2026:
+- Link para retornar ao repositório
+- Fix de bug de lista de desejos inexistente
+- Ícone de fechar 
+- Alterações visuais do "Quem somos"
 
 ## [1.3.1] - 06/02/2026:
 - Correção de informações do usuário logado não aparecer

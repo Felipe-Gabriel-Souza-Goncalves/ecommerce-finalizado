@@ -4,7 +4,7 @@
 https://felipe-gabriel-souza-goncalves.github.io/ecommerce-finalizado/
 
 ## ✏️ Descrição:
-Projeto **inicialmente** feito como projeto disciplinar no SENAI [SENAI Nami Jafet](https://sp.senai.br/unidade/mogidascruzes/)
+Projeto **inicialmente** feito como projeto disciplinar no [SENAI Nami Jafet](https://sp.senai.br/unidade/mogidascruzes/)
 <br>
 Simula um e-commerce de jogos indies entre 3 páginas:
   - Inicial (index.html)
